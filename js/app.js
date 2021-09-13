@@ -21,7 +21,11 @@ const showProducts = (products) => {
     
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
-      <h5 class="">Rating: <span class="text-danger">${product.rating.rate}</span> Raters: <span class="text-warning">${product.rating.count}</span></h5>
+     
+      <h5 class="">  <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star star"></span> Rating: <span class="text-danger">${product.rating.rate}</span>   Visit: <span class="text-warning">${product.rating.count}</span></h5>
       <h2>Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button onclick="loadDetails(${product.id})" id="details-btn" class="btn btn-danger">Details</button></div>
@@ -126,3 +130,4 @@ const updateTotal = () => {
 
   document.getElementById("total").innerText = grandTotal;
 };
+
