@@ -40,7 +40,7 @@ body {
 
 
 .single-product {
-  
+  width: 350px;
   padding: 10px;
   transition: 0.6s;
 }
