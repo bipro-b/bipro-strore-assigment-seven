@@ -27,7 +27,7 @@ const showProducts = (products) => {
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star star"></span> Rating: <span class="text-danger">${product.rating.rate}</span>   Visit: <span class="text-warning">${product.rating.count}</span></h5>
       <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart 🛒</button>
       <button onclick="loadDetails(${product.id})" id="details-btn" class="btn btn-danger">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
@@ -80,6 +80,7 @@ const addToCart = (id, price) => {
 
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
+  updateTotal();
 };
 
 const getInputValue = (id) => {
@@ -94,14 +95,15 @@ const getInputValue = (id) => {
 const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
-  const total = convertedOldPrice + convertPrice;
+  const total = parseFloat(convertedOldPrice) + convertPrice;
   document.getElementById(id).innerText = parseFloat(total).toFixed(2); // fixed
-  updateTotal();
+
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
   document.getElementById(id).innerText = parseFloat(value).toFixed(2);  // fixed
+
 };
 
 // update delivery charge and total Tax
